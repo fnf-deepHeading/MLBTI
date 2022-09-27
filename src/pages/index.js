@@ -1,116 +1,75 @@
 import Head from 'next/head';
-import { Box, Container, Grid } from '@mui/material';
-import { Budget } from '../components/dashboard/budget';
-import { LatestOrders } from '../components/dashboard/latest-orders';
-import { LatestProducts } from '../components/dashboard/latest-products';
-import { Sales } from '../components/dashboard/sales';
-import { TasksProgress } from '../components/dashboard/tasks-progress';
-import { TotalCustomers } from '../components/dashboard/total-customers';
-import { TotalProfit } from '../components/dashboard/total-profit';
-import { TrafficByDevice } from '../components/dashboard/traffic-by-device';
-import { DashboardLayout } from '../components/dashboard-layout';
+import NextLink from 'next/link';
+import { Box, Button, Container, Typography } from '@mui/material';
+import ArrowRight from '@mui/icons-material/ArrowRight';
 
 const Page = () => (
   <>
     <Head>
       <title>
-        Dashboard | Material Kit
+        HOMEPAGE
       </title>
     </Head>
     <Box
       component="main"
       sx={{
+        alignItems: 'center',
+        display: 'flex',
         flexGrow: 1,
-        py: 8
+        minHeight: '100%'
       }}
     >
-      <Container maxWidth={false}>
-        <Grid
-          container
-          spacing={3}
+      <Container maxWidth="md">
+        <Box
+          sx={{
+            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column'
+          }}
         >
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="h1"
           >
-            <Budget />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
+            MLBTI
+          </Typography>
+          <Typography
+            align="center"
+            color="textPrimary"
+            variant="subtitle2"
           >
-            <TotalCustomers />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
+            나의 패션 MBTI를 알아보자
+          </Typography>
+          <Box sx={{ textAlign: 'center' }}>
+            <img
+              alt="Under development"
+              src="/static/images/MLBTI_LOGO.png"
+              style={{
+                marginTop: 50,
+                display: 'inline-block',
+                maxWidth: '100%',
+                width: 560
+              }}
+            />
+          </Box>
+          <NextLink
+            href="/test"
+            passHref
           >
-            <TasksProgress />
-          </Grid>
-          <Grid
-            item
-            xl={3}
-            lg={3}
-            sm={6}
-            xs={12}
-          >
-            <TotalProfit sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <LatestProducts sx={{ height: '100%' }} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <LatestOrders />
-          </Grid>
-        </Grid>
+            <Button
+              component="a"
+              startIcon={(<ArrowRight fontSize="small" />)}
+              sx={{ mt: 3 }}
+              variant="contained"
+            >
+              START!
+            </Button>
+          </NextLink>
+        </Box>
       </Container>
     </Box>
   </>
-);
-
-Page.getLayout = (page) => (
-  <DashboardLayout>
-    {page}
-  </DashboardLayout>
 );
 
 export default Page;
