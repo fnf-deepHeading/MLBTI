@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { questions } from '../__mocks__/questions';
 import { Box, Button, Container, Typography } from '@mui/material';
 import LinearProgress from '@mui/material/LinearProgress';
+import axios from 'axios';
 
 function LinearProgressWithLabel(props) {
     return (
