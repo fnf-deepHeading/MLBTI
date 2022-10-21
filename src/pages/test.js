@@ -22,19 +22,22 @@ function LinearProgressWithLabel(props) {
   }
 
 export const Page = () => {
-    const [progress, setProgress] = useState(10);
+    const [progress, setProgress] = useState(100/4);
     const [questionNum, setQuestionNum] = useState(0);
-    const [answer, setAnswer] = useState([0]);
+    const [answer, setAnswer] = useState([]);
     const router = useRouter();
 
     function clickAnswer(answerIndex) {
-        if(questionNum < 8) {
+        if(questionNum < 3) {
             setAnswer([...answer, answerIndex])
             setQuestionNum((prev) => prev + 1)
+            setProgress((100/4)*(questionNum+2))
         } else {
-            setAnswer([...answer, answerIndex])
-            alert('Finish!' + answer)
-            router.push('/result')
+            // setAnswer([...answer, answerIndex])
+            answer.push(answerIndex);
+            router.push({
+                pathname: '/result', 
+                query: {answer: answer}})
         }
         return true;
     }
@@ -64,7 +67,7 @@ export const Page = () => {
                     }}
                 >
                     <Box sx={{ width: '30%', height: '5rem', alignItems: 'center' }}>
-                        <LinearProgressWithLabel value={questions[questionNum].id*10} sx={{height:15, borderRadius:5}}/>
+                        <LinearProgressWithLabel value={progress} sx={{height:15, borderRadius:5}}/>
                     </Box>
                     <Box sx={{ height: '7rem'}}>
                         <Typography

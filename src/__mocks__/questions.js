@@ -1,52 +1,38 @@
 export const questions = [
+    // 패션에 대한 관심도
     {
         id: 1,
-        question: 'First Question', 
+        question: '나는 외출 전 무슨 옷을 입을지 고민한다.', 
         answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
+        /*
+            0, 1 => P / 2, 3 => V
+         */
     },
+    // 관종력
     {
         id: 2,
-        question: 'Second Question', 
+        question: '나는 사람들 사이에서 돋보이고 싶다.', 
         answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
+        /*
+            0, 1 => R / 2, 3 => N
+         */
     },
+    // 형식적
     {
         id: 3,
-        question: 'Third Question', 
+        question: '옷은 단정하게 입는 것이 좋다.', 
         answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
+        /*
+            0, 1 => F / 2, 3 => C
+         */
     },
+    // 화려함
     {
         id: 4,
-        question: 'Fourth Question', 
+        question: '지금 착용하고 있는 악세서리가 3가지 이상이다.', 
         answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 5,
-        question: 'Fifth Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 6,
-        question: 'Sixth Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 7,
-        question: 'Seventh Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 8,
-        question: 'Eighth Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 9,
-        question: 'Nineth Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
-    {
-        id: 10,
-        question: 'Tenth Question', 
-        answerList: ['매우 그런 편이다', '조금 그런 편이다', '조금 그렇지 않은 편이다', '매우 그렇지 않은 편이다']
-    },
+        /*
+            0, 1 => A / 2, 3 => I
+         */
+    }
 ]
